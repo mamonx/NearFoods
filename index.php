@@ -12,18 +12,17 @@
 </head>
 <body>
 <div align="left" class="content-padded">
-    <span class="icon icon-bars"></span>
+    <span class="icon icon-bars"></span>NearFoods
 </div>
 <div align="center">
     <h2>近場の食事処を</h2>
 </div>
-</br>
 <form class="input-group">
 <button class="btn btn-negative btn-block">探す</button>
 </br>
-        <input type="text" placeholder="５分以内">
-        <input type="text" placeholder="５分以内">
-        <input type="text" placeholder="５分以内">
+        <h3>徒歩</h3><input type="text" placeholder="５分以内の食事処を表示">
+        <h3>徒歩</h3><input type="text" placeholder="５分以内の食事処を表示">
+        <h3>徒歩</h3><input type="text" placeholder="５分以内の食事処を表示">
 </form>
 </body>
 </html>
