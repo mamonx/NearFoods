@@ -14,7 +14,7 @@
 <body>
 <div class="nf-nav">
   <span class="icon icon-bars"></span>
-  <span class="title-text">NearFoods</span>
+  <span class="title-text">Near&nbsp;Foods</span>
 </div>
 <div align="center">
   <h2>近場の食事処を</h2>
