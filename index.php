@@ -18,6 +18,12 @@
     <h2>近場の食事処を</h2>
 </div>
 </br>
+<form class="input-group">
 <button class="btn btn-negative btn-block">探す</button>
+</br>
+        <input type="text" placeholder="５分以内">
+        <input type="text" placeholder="５分以内">
+        <input type="text" placeholder="５分以内">
+</form>
 </body>
 </html>
