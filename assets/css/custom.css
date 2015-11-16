@@ -1,0 +1,18 @@
+.nf-nav {
+    background: #FF5C26;
+    padding: 0.6em 1em;
+    color: #FFF;
+    vertical-align: middle;
+}
+
+.nf-nav .icon {
+    font-weight: bold;
+}
+
+.nf-nav .title-text {
+    color: #FFF;
+    font-size: 128%;
+    line-height: 1em;
+    letter-spacing: 0.05em;
+    margin-left: 0.5em;
+}
