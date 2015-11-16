@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>近場の食事処を探す</title>
+    <title>NearFoods | 近くの食事処を簡単に探せる！</title>
 
     <!-- Include the compiled Ratchet CSS -->
     <link href="./assets/css/ratchet.css" rel="stylesheet">
