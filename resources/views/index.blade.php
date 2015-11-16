@@ -3,13 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>NearFoods | 近くの食事処を簡単に探せる！</title>
-
-  <!-- Include the compiled Ratchet CSS -->
-  <link href="./assets/css/ratchet.css" rel="stylesheet">
-  <link href="./assets/css/custom.css" rel="stylesheet">
-
-  <!-- Include the compiled Ratchet JS -->
-  <script src="./assets/js/ratchet.js"></script>
+  <link href="{{ url('assets/css/ratchet.css') }}" rel="stylesheet">
+  <link href="{{ url('assets/css/custom.css') }}" rel="stylesheet">
+  <script src="{{ url('assets/js/ratchet.js') }}"></script>
 </head>
 <body>
 <div class="nf-nav">

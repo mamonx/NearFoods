@@ -1,2 +1,9 @@
+vendor
 .idea
+.env
 git-push
+.DS_Store
+composer.lock
+composer.phar
+
+!.gitkeep
