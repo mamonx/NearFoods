@@ -16,10 +16,20 @@
   <h2>近場の食事処を</h2>
 </div>
 <form class="input-group">
-  <button class="btn btn-negative btn-block">探す</button>
-  <h3>徒歩</h3><input type="text" placeholder="５分以内の食事処を表示">
-  <h3>徒歩</h3><input type="text" placeholder="５分以内の食事処を表示">
-  <h3>徒歩</h3><input type="text" placeholder="５分以内の食事処を表示">
+    <select>
+        <option value="on">営業中の食事処のみ表示</option>
+        <option value="off">すべての食事処を表示</option>
+    </select>
+    <button class="btn btn-negative btn-block">探す</button>
+    <select>
+        <option value="5">徒歩５分以内</option>
+        <option value="10">徒歩１０分以内</option>
+    </select>
+    <div class="frame">
+        <input type="text" value="食事処を表示">
+        <input type="text" value="営業時間">
+        <input type="text" value="所要時間">
+    </div>
 </form>
 </body>
 </html>
