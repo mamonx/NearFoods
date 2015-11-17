@@ -10,7 +10,7 @@ class HotPepperController extends AbstractApiController
     public function getIndex()
     {
         $service = new HotPepperService();
-        return $service->index();
+        return $service->lists([]);
     }
 
     public function getShow($id)

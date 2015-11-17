@@ -77,25 +77,27 @@ abstract class AbstractActiveResource
      */
     public function get()
     {
-        $url = new Url($this->joinTokenUrl());
-        if (!empty($this->conditions)) {
-            foreach ($this->conditions as $k => $v) {
-                $url->query->set($k, $v);
-            }
-        }
-        $this->clearConditions();
         try {
+            $url = new Url($this->joinTokenUrl());
+            $this->addQueries($url);
             $response = $this->client->request('GET', $url->__toString());
-            return $this->result($response);
+            $result = $this->result($response);
         }
         catch (\GuzzleHttp\Exception\ClientException $e) {
             $code = $e->getResponse()->getStatusCode();
-            $errorResult = new ErrorResult();
-            $errorResult
+            $result = new ErrorResult();
+            $result
                 ->setCode($code)
                 ->setMessage('データの取得に失敗しました。');
-            return $errorResult;
         }
+        catch (\Exception $e) {
+            $result = new ErrorResult();
+            $result
+                ->setCode(500)
+                ->setMessage('データの取得に失敗しました。');
+        }
+
+        return $result;
     }
 
     /**
@@ -132,6 +134,19 @@ abstract class AbstractActiveResource
         }
 
         return $result;
+    }
+
+    /**
+     * @param Url $url
+     */
+    private function addQueries(Url $url)
+    {
+        if (!empty($this->conditions)) {
+            foreach ($this->conditions as $k => $v) {
+                $url->query->set($k, $v);
+            }
+            $this->clearConditions();
+        }
     }
 
 }
