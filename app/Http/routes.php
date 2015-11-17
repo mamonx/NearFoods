@@ -14,3 +14,8 @@
 $app->get('/', function () {
   return view('index');
 });
+
+$app->get('/api/index', function() {
+    $c = new \App\Http\Controllers\Api\HotPaper;
+    return $c->getIndex();
+});
