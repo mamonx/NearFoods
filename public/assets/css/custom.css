@@ -16,3 +16,8 @@
     letter-spacing: 0.05em;
     margin-left: 0.5em;
 }
+
+.frame {
+    border:solid 10px #FF5C26;
+    border-radius: 1em;
+}
