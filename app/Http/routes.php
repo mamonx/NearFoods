@@ -1,16 +1,11 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
-|
-*/
+$app->get('/',           'ShopController@getIndex');
+$app->get('/shops/{id}', 'ShopController@getShow');
+$app->post('/shops',     'ShopController@postList');
 
-$app->get('/', function () {
-  return view('index');
+
+$app->get('/api/index', function() {
+    $c = new \App\Http\Controllers\Api\HotPepperController();
+    return $c->getIndex();
 });
