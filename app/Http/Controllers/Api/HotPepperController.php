@@ -2,27 +2,21 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Components\ActiveResources\HotPepper;
+use App\Components\Services\HotPepperService;
 
 class HotPepperController extends AbstractApiController
 {
 
     public function getIndex()
     {
-        $activeResource = new HotPepper();
-        return $activeResource
-            ->conditions(['SearchAddress' => '神奈川県'])
-            ->find()
-            ->result();
+        $service = new HotPepperService();
+        return $service->index();
     }
 
     public function getShow($id)
     {
-        $activeResource = new HotPepper();
-        return $activeResource
-            ->conditions(['ShopId' => $id])
-            ->find()
-            ->result('json');
+        $service = new HotPepperService();
+        return $service->show($id);
     }
 
 }

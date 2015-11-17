@@ -2,9 +2,7 @@
 
 namespace App\Components\ActiveResources;
 
-use App\Components\ActiveResources\Result\BaseResult;
-use App\Components\Converter\ConvertXml;
-use Purl\Url;
+use App\Components\ActiveResources\Results\HotPepperResult;
 
 class HotPepper extends AbstractActiveResource
 {
@@ -16,39 +14,16 @@ class HotPepper extends AbstractActiveResource
     {
         $this->site = 'http://api.hotpepper.jp/GourmetSearch/V110/';
         $this->token = env('API_TOKEN');
+        $this->providers['Result'] = HotPepperResult::class;
     }
 
     /**
-     * @return BaseResult
+     * join url to site and token .
+     * @return string
      */
-    public function find()
+    protected function joinTokenUrl()
     {
-        $url = new Url(sprintf('%s?key=%s', $this->site, $this->token));
-
-        if (!empty($this->conditions)) {
-            $url->setData($this->conditions);
-        }
-
-        $this->clearConditions();
-
-        $response = $this->client->request('GET', $url);
-
-        return new BaseResult($response);
+        return sprintf('%s?key=%s', $this->site, $this->token);
     }
 
-    /**
-     * @param string $format
-     * @return mixed
-     */
-    public function result($format)
-    {
-        switch($format) {
-            case 'json':
-                return ConvertXml::toJson($this->contents);
-            case 'xml':
-                return $this->contents;
-        }
-
-        throw new \RuntimeException('invalid format type');
-    }
 }
