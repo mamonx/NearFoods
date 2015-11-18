@@ -8,6 +8,6 @@ $app->group([
     'namespace' => 'App\Http\Controllers\Api',
     'prefix'    => 'api'
 ], function ($app) {
-    $app->post('shops',      'HotPepperController@postList');
-    $app->post('shops/{id}', 'HotPepperController@postShow');
+    $app->post('page/{id:[0-9]+}', 'HotPepperController@postPage');
+    $app->post('shops/{id}',       'HotPepperController@postShow');
 });

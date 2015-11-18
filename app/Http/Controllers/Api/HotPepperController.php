@@ -15,13 +15,14 @@ class HotPepperController extends AbstractApiController
 
     /**
      * @param Request $request
+     * @param $page
      * @return mixed
      */
-    public function postList(Request $request)
+    public function postPage(Request $request, $page)
     {
-        $conditions = $this->permit($request);
         $service = new HotPepperService();
-        return $service->lists($conditions);
+        $conditions = $this->permit($request);
+        return $service->page($page, $conditions);
     }
 
     /**

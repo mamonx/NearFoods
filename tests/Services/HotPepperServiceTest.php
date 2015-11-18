@@ -32,28 +32,32 @@ class HotPepperServiceTest extends \TestCase
         $this->assertEquals($lists['status'], 'error');
     }
 
-    public function testListWithPaging()
+    public function testPaging()
     {
         $s = new HotPepperService();
         $fixture = [
             'lat'   => 35.745404,
             'lng'   => 139.784049,
-            'start' => 1
         ];
-        $lists = $s->lists($fixture, 'array');
+
+        $currentPage = 1;
+        $lists = $s->page($currentPage, $fixture, 'array');
+
         $maxPage = intval($lists['NumberOfResults']);
-        $currentPage = intval($lists['DisplayFrom']);
+
         $this->assertNotEquals(0, $maxPage);
+
         $pages = range($currentPage + 1, $maxPage);
         $bool = false;
+
         foreach ($pages as $page) {
-            $fixture['start'] = $page;
-            $tmp = $s->lists($fixture, 'array');
+            $tmp = $s->page($page, $fixture, 'array');
             $this->assertArrayHasKey('DisplayFrom', $tmp);
             if ((int)$tmp['DisplayFrom'] === $maxPage) {
                 $bool = true;
             }
         }
+
         $this->assertTrue($bool);
     }
 
