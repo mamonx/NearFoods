@@ -16,25 +16,25 @@
   <h2>近場の食事処を</h2>
 </div>
 <form action="{{ url('shops') }}" class="input-group" method="post">
-    <button class="btn btn-negative btn-block">検索</button>
-    <select>
-        <option value="on">営業中の食事処のみ表示</option>
-        <option value="off">すべての食事処を表示</option>
-    </select>
-    <select>
-        <option value="5">徒歩５分以内</option>
-        <option value="10">徒歩１０分以内</option>
-    </select>
-    <div class="restaurant" align="right">
-        食事処の営業状況：
-        <span class="open">OPEN</span>
-        <span class="close">CLOSE</span>
-    </div>
-    <div class="frame">
-        <input type="text" value="食事処を表示">
-        <input type="text" value="営業時間">
-        <input type="text" value="所要時間">
-    </div>
+  <button class="btn btn-negative btn-block">検索</button>
+  <select>
+    <option value="on">営業中の食事処のみ表示</option>
+    <option value="off">すべての食事処を表示</option>
+  </select>
+  <select>
+    <option value="5">徒歩５分以内</option>
+    <option value="10">徒歩１０分以内</option>
+  </select>
+  <div class="restaurant" align="right">
+    食事処の営業状況：
+    <span class="open">OPEN</span>
+    <span class="close">CLOSE</span>
+  </div>
+  <div class="frame">
+    <input type="text" value="食事処を表示">
+    <input type="text" value="営業時間">
+    <input type="text" value="所要時間">
+  </div>
   <input name="lat" value="35.529274" type="hidden"/>
   <input name="lng" value="139.375055" type="hidden"/>
 </form>

@@ -8,6 +8,11 @@ use App\Components\ActiveResources\HotPepper;
 class HotPepperService
 {
 
+    /**
+     * @param array $conditions
+     * @param string $format
+     * @return mixed
+     */
     public function lists(array $conditions, $format = 'json')
     {
         $activeResource = new HotPepper();
@@ -17,6 +22,26 @@ class HotPepperService
             ->result($format);
     }
 
+    /**
+     * @param int $page
+     * @param array $conditions
+     * @param string $format
+     * @return mixed
+     */
+    public function page($page, array $conditions, $format = 'json')
+    {
+        if (empty($page) || !ctype_digit((string)$page)) {
+            $page = 1;
+        }
+        $conditions['start'] = $page;
+        return $this->lists($conditions, $format);
+    }
+
+    /**
+     * @param $id
+     * @param string $format
+     * @return mixed
+     */
     public function show($id, $format = 'json')
     {
         $activeResource = new HotPepper();

@@ -17,4 +17,14 @@ class ConvertXml
         return $json ?: null;
     }
 
+    /**
+     * @param $xml
+     * @return mixed|null
+     */
+    public static function toArray($xml)
+    {
+        $json  = self::toJson($xml);
+        return $json ? json_decode($json, true)  : null;
+    }
+
 }
