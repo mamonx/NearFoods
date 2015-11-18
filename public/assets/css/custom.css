@@ -18,6 +18,19 @@
 }
 
 .frame {
+    margin-top:5px;
     border:solid 10px #FF5C26;
     border-radius: 1em;
+}
+
+.restaurant .open {
+    border:solid 3px #000000;
+    border-radius: 0.2em;
+    color: blue;
+}
+
+.restaurant .close {
+    border:solid 3px #000000;
+    border-radius: 0.2em;
+    color: red;
 }
