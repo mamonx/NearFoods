@@ -16,7 +16,7 @@
   <h2>近場の食事処を</h2>
 </div>
 <form action="{{ url('shops') }}" class="input-group" method="post">
-  <button class="btn btn-negative btn-block">検索</button>
+  <button class="btn btn-negative btn-block">探す</button>
   <select>
     <option value="on">営業中の食事処のみ表示</option>
     <option value="off">すべての食事処を表示</option>
