@@ -15,8 +15,12 @@
 <div align="center">
   <h2>近場の食事処を</h2>
 </div>
+<<<<<<< HEAD
 <form class="input-group">
     <button class="btn btn-negative btn-block">探す</button>
+=======
+<form action="{{ url('shops') }}" class="input-group" method="post">
+>>>>>>> b242b5b3203a1956d8206bfa0c7db43ce4639549
     <select>
         <option value="on">営業中の食事処のみ表示</option>
         <option value="off">すべての食事処を表示</option>
@@ -35,6 +39,8 @@
         <input type="text" value="営業時間">
         <input type="text" value="所要時間">
     </div>
+  <input name="lat" value="35.529274" type="hidden"/>
+  <input name="lng" value="139.375055" type="hidden"/>
 </form>
 </body>
 </html>
