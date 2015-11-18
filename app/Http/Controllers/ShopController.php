@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ShopController extends  Controller
 {
+    /**
+     * @var array
+     */
+    protected $permit = ['id', 'lat', 'lng', 'start'];
 
     /**
      * #GET /
@@ -38,7 +42,7 @@ class ShopController extends  Controller
      */
     public function postList(Request $request)
     {
-        $conditions = $request->all();
+        $conditions = $this->permit($request);
         $service = new HotPepperService();
         $shops = $service->lists($conditions, 'array');
         return view('list', compact('shops'));
