@@ -3,10 +3,20 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 abstract class AbstractApiController extends Controller
 {
-    abstract public function getIndex();
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    abstract public function postList(Request $request);
 
-    abstract public function getShow($id);
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    abstract public function postShow(Request $request, $id);
 }

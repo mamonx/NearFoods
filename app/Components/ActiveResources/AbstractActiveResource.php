@@ -8,6 +8,7 @@ use App\Components\ActiveResources\Exceptions\UndefinedProviderException;
 use App\Components\ActiveResources\Results\AbstractResult;
 use App\Components\ActiveResources\Results\ErrorResult;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
 use Purl\Url;
 
@@ -49,7 +50,8 @@ abstract class AbstractActiveResource
         $this->initialize();
 
         if (!isset($this->providers['Result'])) {
-            throw new UndefinedProviderException('undefined set Result provider.');
+            throw new UndefinedProviderException(
+                'undefined set Result provider.');
         }
 
         if (!class_exists($this->providers['Result'])) {
@@ -83,7 +85,7 @@ abstract class AbstractActiveResource
             $response = $this->client->request('GET', $url->__toString());
             $result = $this->result($response);
         }
-        catch (\GuzzleHttp\Exception\ClientException $e) {
+        catch (ClientException $e) {
             $code = $e->getResponse()->getStatusCode();
             $result = new ErrorResult();
             $result
