@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>NearFoods | 近くの食事処を簡単に探せる！</title>
   <link href="{{ url('assets/css/ratchet.css') }}" rel="stylesheet">
   <link href="{{ url('assets/css/custom.css') }}" rel="stylesheet">
@@ -15,12 +15,8 @@
 <div align="center">
   <h2>近場の食事処を</h2>
 </div>
-<<<<<<< HEAD
-<form class="input-group">
-    <button class="btn btn-negative btn-block">探す</button>
-=======
 <form action="{{ url('shops') }}" class="input-group" method="post">
->>>>>>> b242b5b3203a1956d8206bfa0c7db43ce4639549
+    <button class="btn btn-negative btn-block">検索</button>
     <select>
         <option value="on">営業中の食事処のみ表示</option>
         <option value="off">すべての食事処を表示</option>

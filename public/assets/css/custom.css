@@ -16,6 +16,13 @@
     letter-spacing: 0.05em;
     margin-left: 0.5em;
 }
+.nf-nav .title-result {
+    color: #FFF;
+    font-size: 128%;
+    line-height: 1em;
+    letter-spacing: 0.05em;
+    margin-center: 10em;
+}
 
 .frame {
     margin-top:5px;
