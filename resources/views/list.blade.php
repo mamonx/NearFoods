@@ -5,45 +5,37 @@
   <title>検索結果</title>
   <link href="{{ url('assets/css/ratchet.css') }}" rel="stylesheet">
   <link href="{{ url('assets/css/custom.css') }}" rel="stylesheet">
-  <script src="{{ url('assets/js/ratchet.js') }}"></script>
 </head>
 <body>
 {{-- あとは見た目とか全般よろおねwww --}}
-<div class="nf-nav" align="center">
-    <span class="title-result">検索結果</span>
-</div>
+<header id="ControllerListHeader" class="bar bar-nav">
+  <a class="icon icon-refresh pull-right"></a>
+  <h1 class="title">検索結果</h1>
+</header>
+<div class="content">
 @if (isset($shops['Shop']))
-    <div class="demo">
-        <ul class="table-view">
-  @foreach($shops['Shop'] as $shop)
-            <li class="table-view-cell media">
-                <h4>{{ $shop['ShopName'] }}</h4>
-                <a class="navigate-right" href="{{ url('/shops/' . $shop['ShopIdFront']) }}">
-                    <img class="media-object pull-left" src="{{ $shop['PictureUrl']['PcMiddleImg'] }}" alt="a"/>
-                    </a>
-                    <div class="media-body">
-                        <table>
-                            <tr>
-                                <th>住所</th>
-                                <td>{{ $shop['ShopAddress'] }}</td>
-                            </tr>
-                            <tr>
-                                <th>予算</th>
-                                <td>{{ $shop['BudgetDesc'] }}</td>
-                            </tr>
-                            <tr>
-                                <th>駐車場</th>
-                                <td>{{ $shop['Parking'] }}</td>
-                            </tr>
-                        </table>
-                    </div>
-                </>
-            </li>
-  @endforeach
-        </ul>
-        </div>
+    <ul class="table-view">
+      {{--　わざとかさまし --}}
+      @foreach(range(0, 10) as $i)
+      @foreach($shops['Shop'] as $shop)
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="{{ url('/shops/' . $shop['ShopIdFront']) }}">
+            <img class="media-object pull-left"
+                 src="{{ $shop['PictureUrl']['MbSmallImg'] }}">
+            <div class="media-body">
+              {{ $shop['ShopName'] }}
+              <p>住所:&nbsp;{{ $shop['ShopAddress'] }}</p>
+              <p>予算:&nbsp;{{ $shop['BudgetDesc'] }}</p>
+              <p>駐車場:&nbsp;{{ $shop['Parking'] }}</p>
+            </div>
+          </a>
+        </li>
+      @endforeach
+      @endforeach
+    </ul>
 @else
   最寄りの店舗が見つかりませんでした。
 @endif
+</div>
 </body>
 </html>
