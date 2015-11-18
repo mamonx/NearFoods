@@ -13,13 +13,12 @@
     <span class="title-result">検索結果</span>
 </div>
 @if (isset($shops['Shop']))
-  @foreach($shops['Shop'] as $shop)
     <div class="demo">
         <ul class="table-view">
+  @foreach($shops['Shop'] as $shop)
             <li class="table-view-cell media">
                 <h4>{{ $shop['ShopName'] }}</h4>
-                <a class="navigate-right">
-                    <a href="{{ url('/shops/' . $shop['ShopIdFront']) }}">
+                <a class="navigate-right" href="{{ url('/shops/' . $shop['ShopIdFront']) }}">
                     <img class="media-object pull-left" src="{{ $shop['PictureUrl']['PcMiddleImg'] }}" alt="a"/>
                     </a>
                     <div class="media-body">
@@ -38,7 +37,7 @@
                             </tr>
                         </table>
                     </div>
-                </a>
+                </>
             </li>
   @endforeach
         </ul>
