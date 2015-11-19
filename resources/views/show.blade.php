@@ -9,8 +9,11 @@
 {{-- 見た目適当だからあとはよろしこ --}}
 @if($shop)
   <div class="demo">
-    <h4>{{ $shop['ShopName'] }}</h4>
+    <h2>{{ $shop['ShopName'] }}</h2>
       <img src="{{ $shop['PictureUrl']['PcLargeImg'] }}" alt="a"/>
+      <form align="right">
+          <input type="button" value="戻る" onClick="history.back()">
+      </form>
     <table class="show-table">
       @foreach($shop as $key => $val)
         @if (is_string($val))
