@@ -15,16 +15,18 @@
       <form>
           <p style="text-align:right"><input type="button" value="検索結果へ戻る" onClick="back()"></p>
       </form>
-    <table class="show-table">
+    {{--<table class="show-table">--}}
       @foreach($shop as $key => $val)
         @if (is_string($val))
+          {{--
           <tr>
             <th>{{ $key }}</th>
             <td>{{ $val }}</td>
           </tr>
+          --}}
         @endif
       @endforeach
-    </table>
+    {{--</table>--}}
       <table class="show-table">
           <tr>
               <th>店舗名</th>
