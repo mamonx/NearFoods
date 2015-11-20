@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>食事処の詳細情報</title>
   <link href="{{ url('assets/css/custom.css') }}" rel="stylesheet">
+  <script src="{{ url('assets/js/custom.js') }}"></script>
 </head>
 <body>
 {{-- 見た目適当だからあとはよろしこ --}}
@@ -11,8 +12,8 @@
   <div class="demo">
     <h2>{{ $shop['ShopName'] }}</h2>
       <img src="{{ $shop['PictureUrl']['PcLargeImg'] }}" alt="a"/>
-      <form align="right">
-          <input type="button" value="戻る" onClick="history.back()">
+      <form>
+          <p style="text-align:right"><input type="button" value="検索結果へ戻る" onClick="back()"></p>
       </form>
     <table class="show-table">
       @foreach($shop as $key => $val)

@@ -5,11 +5,13 @@
   <title>検索結果</title>
   <link href="{{ url('assets/css/ratchet.css') }}" rel="stylesheet">
   <link href="{{ url('assets/css/custom.css') }}" rel="stylesheet">
+  <script src="{{ url('assets/js/custom.js') }}"></script>
 </head>
 <body>
 {{-- あとは見た目とか全般よろおねwww --}}
 <header id="ControllerListHeader" class="bar bar-nav">
-  <a class="icon icon-refresh pull-right"></a>
+  <a class="icon icon-refresh pull-right"  onclick="reload()"></a>
+  <a  class="icon icon-up pull-right" onclick="page_up()"></a>
   <h1 class="title">検索結果</h1>
 </header>
 <div class="content">
